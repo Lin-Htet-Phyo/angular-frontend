@@ -1,0 +1,12 @@
+<div>
+    Todo List
+    <ul>
+        @for (todo of todos; track todo.id; let idx = $index) {
+            <ol>{{ todo.title }} index {{idx}}</ol>
+        } @empty {
+            <h1>List is empty</h1>
+        }
+
+        <button type="button" class="btn btn-primary" (click)="load()">Load</button>
+    </ul>
+</div>

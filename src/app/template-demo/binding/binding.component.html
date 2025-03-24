@@ -1,0 +1,29 @@
+<div>
+    1 + 2 is {{ 1 + 2 }}
+    <button type="button" class="btn btn-primary"
+    (click)="validateForm()">Valid Form</button>
+    &nbsp;
+    <button type="button" class="btn btn-primary"
+            [disabled]="!formValid">Save</button>
+    &nbsp;
+    <button type="button" class="btn btn-primary"
+            (click)="setTheme()">Set Theme</button>
+    &nbsp;
+    <button type="button" class="btn btn-primary"
+            (click)="toggle()">Toggle Another</button>
+
+    <div [class.theme]="useTheme"
+    [class.another]="userAnother">
+        This is use theme.
+    </div>
+    <div [class]="classGroup">
+        This is use object.
+    </div>
+    <button type="button" class="btn btn-primary"
+            (click)="inc()">incFont</button>
+
+    <div [style.font-size.px]="fontSize">
+        Here is css style
+    </div>
+    <input type="text" (keyup)="updateFields($event)">
+</div>
