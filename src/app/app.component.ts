@@ -54,11 +54,24 @@ import {DiDemo2Component} from './di-demo2/di-demo2.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {TodosPageComponent} from './pages/todos-page/todos-page.component';
 import {CommonModule} from '@angular/common';
+import {NestedRouteDemoComponent} from './pages/nested-route-demo/nested-route-demo.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {ChildAComponent} from './pages/child-a/child-a.component';
+import {ChildBComponent} from './pages/child-b/child-b.component';
+import {TodoDetailsComponent} from './pages/todo-details/todo-details.component';
+import {AuthService} from './services/auth.service';
+import {ReactiveFormDemoComponent} from './reactive-form-demo/reactive-form-demo.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @Component({
     selector: 'app-root',
     imports: [
         RouterOutlet,
+        RouterLink,
+        RouterLinkActive,
+        CommonModule,
+        ReactiveFormsModule,
+
         HelloWorldComponent,
         ListItemComponent,
         UserAccountComponent,
@@ -109,9 +122,12 @@ import {CommonModule} from '@angular/common';
         DiDemo2Component,
         HomePageComponent,
         TodosPageComponent,
-        RouterLink,
-        RouterLinkActive,
-        CommonModule,
+        NestedRouteDemoComponent,
+        NotFoundComponent,
+        ChildAComponent,
+        ChildBComponent,
+        TodoDetailsComponent,
+        ReactiveFormDemoComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
@@ -123,7 +139,7 @@ export class AppComponent {
     tabHeaders = ['Tab1', 'Tab2', 'Tab3'];
 
     user:User;
-    constructor() {
+    constructor(public authService: AuthService) {
         this.user = {
             isAdmin: true,
             userName: 'Admin'

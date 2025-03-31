@@ -7,3 +7,4 @@ ng generate class User --type=model
 ng generate p [name][options]
 ng generate directive directive/highlight
 ng generate s services/HelloWorld
+ng generate guard guards/authGuard
