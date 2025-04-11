@@ -1,18 +1,29 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {TodoService} from '../../services/todo.service';
+import {Todo} from '../../todo.model';
 
 @Component({
-  selector: 'app-todos-page',
-  imports: [],
-  templateUrl: './todos-page.component.html',
-  styleUrl: './todos-page.component.css'
+    selector: 'app-todos-page',
+    imports: [],
+    templateUrl: './todos-page.component.html',
+    styleUrl: './todos-page.component.css'
 })
 export class TodosPageComponent {
-    todos = ['task1', 'task2', 'task3'];
-    constructor(public router: Router) {
+    todos: Todo[] = [];
+
+    constructor(public router: Router, private todoService: TodoService) {
     }
-    gotoDetail(index:number){
-        console.log(index);
-        this.router.navigate(['todos', index + 1]);
+
+    ngOnInit() {
+        console.log("NgOnInit");
+        this.todoService.getAllTodo().subscribe(todos => {
+            this.todos = todos;
+        });
+    }
+
+    gotoDetails(todo: Todo) {
+        console.log('Index ', todo);
+        this.router.navigate(['todos', todo?.id]);
     }
 }
