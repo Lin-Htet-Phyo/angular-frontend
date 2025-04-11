@@ -62,6 +62,8 @@ import {TodoDetailsComponent} from './pages/todo-details/todo-details.component'
 import {AuthService} from './services/auth.service';
 import {ReactiveFormDemoComponent} from './reactive-form-demo/reactive-form-demo.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {DynamicFormDemoComponent} from './dynamic-form-demo/dynamic-form-demo.component';
+import {TemplateFromDemoComponent} from './template-from-demo/template-from-demo.component';
 
 @Component({
     selector: 'app-root',
@@ -128,6 +130,8 @@ import {ReactiveFormsModule} from '@angular/forms';
         ChildBComponent,
         TodoDetailsComponent,
         ReactiveFormDemoComponent,
+        DynamicFormDemoComponent,
+        TemplateFromDemoComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
